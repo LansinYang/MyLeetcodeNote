@@ -4,17 +4,25 @@ public class Solution {
         char[] letter = new char[]{'I','V','X','L','C','D','M'};
         String st = "I";
         for(int i= roman.length-1; i >= 0;i--){
-            if(roman[i]>num){
-                continue;
-            }
-            while(num > 0){
+            while(num > 0&&i>=0){
                 int m = num/roman[i];
                 num = num - m*roman[i];
+                if(4<m && m<9){
+                    st += letter[i+1];
+                    m -=4;
+                }else if(m==9){
+                    st += letter[i];
+                    st +=letter[i+2];
+                    m=0;
+                }else if(m==4){
+                    st +=(letter[i]+letter[i+1]);
+                    m=0;
+                }
                 while(m != 0){
                     st +=letter[i];
                     m--;
                 }
-                i--;
+                i-=2;
             }
             break;
         }
