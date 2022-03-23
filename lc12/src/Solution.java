@@ -15,7 +15,8 @@ public class Solution {
                     st +=letter[i+2];
                     m=0;
                 }else if(m==4){
-                    st +=(letter[i]+letter[i+1]);
+                    st += letter[i];
+                    st += letter[i+1];
                     m=0;
                 }
                 while(m != 0){
