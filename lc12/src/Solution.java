@@ -9,7 +9,7 @@ public class Solution {
                 num = num - m*roman[i];
                 if(4<m && m<9){
                     st += letter[i+1];
-                    m -=4;
+                    m -=5;
                 }else if(m==9){
                     st += letter[i];
                     st +=letter[i+2];
